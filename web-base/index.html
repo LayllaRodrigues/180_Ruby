@@ -1,56 +1,113 @@
 <!DOCTYPE html>
-
 <html>
     <head>
         <title>WebBase from QA Ninja</title>
-        <script src="js/vue.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     </head>
-
     <body>
         <div id="app">
-        <h1>Cadastro de Alunos</h1>
-        <form>
-            <label for="nomeCompleto"> Nome Completo</label>
-           <input name="nomeCompleto" type="text">
+            <h1>Cadastro de alunos</h1>
+            <form>
+                <label for="nomeCompleto">Nome Completo</label>
+                <input name="nomeCompleto" type="text" v-model="form.nome">
+                
+                <label for="email">Email</label>
+                <input name="email" type="text" v-model="form.email">
 
+                <label for="nota">Nota</label>
+                <input name="nota" type="text" v-model="form.nota">
 
-           <label for="e-mail"> E-mail</label>
-           <input name="e-mail" type="text">
+                <input type="button" value="Cadastrar" @click="adicionarContato">
+            </form>
 
-           <label for="nota"> Nota</label>
-           <input name="nota" type="text">
+            <!-- <span>
+                {{form.nome}} - {{form.email}} - {{form.nota}}
+            </span> -->
 
-           <input type="button" value="Cadastrar">
-
-        </form>
-
-       
-            <table>
-                <thead>
-                    <th> Nome</th>
-                    <th> E-mail</th>
-                    <th> Nota</th>
+            <div>
+                <table class="table">
+                    <thead>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Nota</th>
+                        <th>Ações</th>
+                    </thead>
                     <tbody>
-                        <tr>
-                            <tr>Laylla Rodrigues</tr>
-                            <tr>laylla@gmail.com</tr>
-                            <tr>10.00</tr>
+                        <tr v-for="aluno in alunos">
+                            <td>{{aluno.nome}}</td>
+                            <td>{{aluno.email}}</td>
+                            <td>{{aluno.nota}}</td>
+                            <td>
+                                <button class="danger" @click="apagarAluno(aluno)">Apagar</button>
+                            </td>
                         </tr>
-                        <tr>
-                            <tr>Lucas Rodrigues</tr>
-                            <tr>lucas@gmail.com</tr>
-                            <tr>09.00</tr>
-                        </tr>
-                        
                     </tbody>
-                </thead>
-            </table>
+                </table>
+            </div>
         </div>
-        <script> 
-            var app = new Vue({
-                el:"#app"
+        <script>
+            var app= new Vue({
+                el: "#app",
+                data: {
+                    form: {
+                        nome: '',
+                        email: '',
+                        nota: ''
+                    },
+                    alunos: []
+                },
+                methods: {
+                    limpaFormulario: function(){
+                        this.form = {
+                            nome: '',
+                            email: '',
+                            nota: ''
+                        }
+                    },
+                    adicionarContato: function() {
+                        // console.log(this.form)
+                        this.alunos.push(this.form)
+                        this.limpaFormulario()
+                    },
+                    apagarAluno: function(aluno) {
+                        var posicao = this.alunos.indexOf(aluno)
+                        this.alunos.splice(posicao, 1)
+                    }
+                }
             })
         </script>
+        <style>
+            .table {
+                margin-top: 20px;
+                width: 100%;
+                text-align: left;
+            }
 
+            .table th, .table td {
+                border-top: 1px solid #ccc;
+            }
+
+            .table th:last-child, .table td:last-child {
+                text-align: right; 
+            }
+
+
+
+            .danger {
+                background-color: deeppink;
+                border-color: deeppink;
+                color: #eee;
+            }
+
+            input {
+                display: block;
+            }
+            input[type=button] {
+                background-color: #3F51B5;
+                margin-top: 10px;
+                border-color: #3F51B5;
+                color: #eee;
+            } 
+        </style>
     </body>
 </html>
