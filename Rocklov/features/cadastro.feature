@@ -1,9 +1,13 @@
+#language: pt
+
+
 Funcionalidade: Cadastro
 
 Sendo um músico que possui equipamentos musicais
 Quero fazer o meu cadastro no Rocklov 
 Para que eu possa disponibilizá-los para locação
 
+@temp
 Cenário: Fazer cadastro
 
     Dado que acesso a página de cadastro
