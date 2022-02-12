@@ -14,11 +14,12 @@ Cenário: Fazer cadastro
     Quando submeto o meu cadastro completo
     Então sou direcionado para o dashboard
 
+@sem_nome
 Cenário: Submeter cadastro sem o nome 
 
     Dado que acesso a página de cadastro
     Quando submeto o meu cadastro sem o nome 
-    Então vjo a mensagm de alerta: Oops, informe seu nome completo!
+    Então vejo a mensagm de alerta: Oops. Informe seu nome completo!
 
 Cenário: Submeter cadastro sem o e-mail
     
