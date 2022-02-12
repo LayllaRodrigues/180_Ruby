@@ -12,4 +12,6 @@ end
   
 Então('sou direcionado para o dashboard') do
     expect(page).to have_css ".dashboard"
+    sleep 10
+
 end
