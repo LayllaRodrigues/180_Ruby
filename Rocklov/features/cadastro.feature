@@ -7,37 +7,41 @@ Sendo um músico que possui equipamentos musicais
 Quero fazer o meu cadastro no Rocklov 
 Para que eu possa disponibilizá-los para locação
 
-@temp
+@tentativa_cadastro
 Cenário: Fazer cadastro
 
     Dado que acesso a página de cadastro
     Quando submeto o meu cadastro completo
     Então sou direcionado para o dashboard
 
-@sem_nome
+@tentativa_cadastro
 Cenário: Submeter cadastro sem o nome 
 
     Dado que acesso a página de cadastro
     Quando submeto o meu cadastro sem o nome 
     Então vejo a mensagm de alerta: Oops. Informe seu nome completo!
 
+@tentativa_cadastro
 Cenário: Submeter cadastro sem o e-mail
     
     Dado que acesso a página de cadastro
     Quando submeto o meu cadastro sem o e-mail
-    Então vejo a mensagem de alerta: Oops, informe um e-mail válidoo!
+    Então vejo a mensagem de alerta: Oops. Informe um email válido!
 
+@tentativa_cadastro
 Cenário: Submeter cadastro com email incorreto
 
     Dado que acesso a página de cadastro
-    Quando submeto o meu cadastro com incorreto
-    Então vejo a mensagem de alerta: Oops, informe um email válido!
+    Quando submeto o meu cadastro com  email incorreto
+    Então vejo a mensagem de alerta: Oops. Informe um email válido!
 
+@tentativa_cadastro
 Cenário: Submeter cadastro sem a senha
 
     Dado que acesso a página de cadastro
     Quando submeto o meu cadastro sem a senha
-    Então vejo a mensagem de alerta: Oops, informe sua senha!
+    Então vejo a mensagem de alerta: Oops. Informe sua senha secreta!
+
 
 
 
