@@ -1,10 +1,21 @@
+require 'mongo'
+
 Dado('que acesso a página de cadastro') do
     visit "http://rocklov-web:3000/signup"
 end
   
 Quando('submeto o meu cadastro completo') do
+
+    
+#{Esse bloco de cod integra com o mongo e deleta todos os registros com o e-mail na variavel users}
+
+    client = Mongo::Client.new('mongodb://rocklov-db:27017/rocklov')
+    users = client[:users]
+    users.delete_many({email: "laylla@hotmail.com"})
+
+
     find("#fullName").set "Laylla Rodrigues"
-    find("#email").set Faker::Internet.free_email
+    find("#email").set "laylla@hotmail.com"
     find("#password").set "pwd123"
 
     click_button    "Cadastrar"
