@@ -19,28 +19,28 @@ Cenário: Submeter cadastro sem o nome
 
     Dado que acesso a página de cadastro
     Quando submeto o meu cadastro sem o nome 
-    Então vejo a mensagm de alerta: Oops. Informe seu nome completo!
+    Então vejo a mensagem de alerta: "Oops. Informe seu nome completo!"
 
 @tentativa_cadastro
 Cenário: Submeter cadastro sem o e-mail
     
     Dado que acesso a página de cadastro
     Quando submeto o meu cadastro sem o e-mail
-    Então vejo a mensagem de alerta: Oops. Informe um email válido!
+    Então vejo a mensagem de alerta: "Oops. Informe um email válido!"
 
 @tentativa_cadastro
 Cenário: Submeter cadastro com email incorreto
 
     Dado que acesso a página de cadastro
     Quando submeto o meu cadastro com  email incorreto
-    Então vejo a mensagem de alerta: Oops. Informe um email válido!
+    Então vejo a mensagem de alerta: "Oops. Informe um email válido!"
 
 @tentativa_cadastro
 Cenário: Submeter cadastro sem a senha
 
     Dado que acesso a página de cadastro
     Quando submeto o meu cadastro sem a senha
-    Então vejo a mensagem de alerta: Oops. Informe sua senha secreta!
+    Então vejo a mensagem de alerta: "Oops. Informe sua senha secreta!"
 
 
 
