@@ -1,17 +1,17 @@
 #language: pt
-
-
 Funcionalidade: Cadastro
 
 Sendo um músico que possui equipamentos musicais
 Quero fazer o meu cadastro no Rocklov 
 Para que eu possa disponibilizá-los para locação
 
-@tentativa_cadastro
+@cadastro
 Cenário: Fazer cadastro
 
     Dado que acesso a página de cadastro
-    Quando submeto o meu cadastro completo
+    Quando submeto o seguinte formulário de cadastro:
+        |nome            |email             |senha |
+        |Laylla Rodrigues|laylla@hotmail.com|pwd123|
     Então sou direcionado para o dashboard
 
 @tentativa_cadastro
