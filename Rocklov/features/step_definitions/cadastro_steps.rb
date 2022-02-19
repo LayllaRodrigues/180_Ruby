@@ -5,7 +5,12 @@ end
 
 Quando('submeto o seguinte formulário de cadastro:') do |table|
     # table is a Cucumber::MultilineArgument::DataTable
+
+    log table.hashes
+
     user = table.hashes.first
+
+    log user
 
     MongoDB.new.remove_user(user[:email])
 
@@ -18,35 +23,6 @@ end
   
 Então('sou direcionado para o dashboard') do
     expect(page).to have_css ".dashboard"
-end
-
-Quando('submeto o meu cadastro sem o nome') do
-    find("#email").set Faker::Internet.free_email
-    find("#password").set "pwd123"
-    click_button    "Cadastrar"
-end
-   
-
-Quando('submeto o meu cadastro sem o e-mail') do
-    find("#fullName").set "Laylla Rodrigues"
-    find("#password").set "pwd123"
-    click_button    "Cadastrar"
-end
-
-Quando('submeto o meu cadastro com  email incorreto') do
-    find("#fullName").set "Laylla Rodrigues"
-    find("#email").set      "emailincorreto.com"
-    find("#password").set "pwd123"
-
-    click_button    "Cadastrar" 
-end
-  
-
-Quando('submeto o meu cadastro sem a senha') do
-    find("#fullName").set "Laylla Rodrigues"
-    find("#email").set Faker::Internet.free_email
-
-    click_button    "Cadastrar"
 end
   
 Então('vejo a mensagem de alerta: {string}') do |expect_alert|
