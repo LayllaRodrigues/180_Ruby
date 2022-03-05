@@ -251,3 +251,16 @@ D, [2022-02-20T15:44:49.793835 #45992] DEBUG -- : MONGODB | Server description f
 D, [2022-02-20T15:44:49.794031 #45992] DEBUG -- : MONGODB | There was a change in the members of the 'Single' topology.
 D, [2022-02-20T15:44:49.794409 #45992] DEBUG -- : MONGODB | rocklov-db:27017 req:29 conn:1:2 sconn:17 | admin.endSessions | STARTED | {"endSessions"=>[{"id"=><BSON::Binary:0x70316622932860 type=uuid data=0x27a8cfd2f0c548b5...>}], "$db"=>"admin"}
 D, [2022-02-20T15:44:49.797029 #45992] DEBUG -- : MONGODB | rocklov-db:27017 req:29 | admin.endSessions | SUCCEEDED | 0.002s
+D, [2022-03-04T19:56:42.289588 #37188] DEBUG -- : MONGODB | Topology type 'unknown' initializing.
+D, [2022-03-04T19:56:42.290998 #37188] DEBUG -- : MONGODB | There was a change in the members of the 'Unknown' topology.
+D, [2022-03-04T19:56:42.291338 #37188] DEBUG -- : MONGODB | Server rocklov-db:27017 initializing.
+D, [2022-03-04T19:56:42.292048 #37188] DEBUG -- : MONGODB | Waiting for up to 30.00 seconds for servers to be scanned: #<Cluster topology=Unknown[rocklov-db:27017] servers=[#<Server address=rocklov-db:27017 UNKNOWN>]>
+W, [2022-03-04T19:56:42.479952 #37188]  WARN -- : MONGODB | Error running ismaster on rocklov-db:27017: Mongo::Error::SocketError: Errno::ECONNREFUSED: Connection refused - connect(2) for 127.0.0.1:27017 (for 127.0.0.1:27017 (no TLS)) (on rocklov-db:27017)
+D, [2022-03-04T19:56:42.480400 #37188] DEBUG -- : MONGODB | Server description for rocklov-db:27017 changed from 'unknown' to 'unknown'.
+D, [2022-03-04T19:56:42.480600 #37188] DEBUG -- : MONGODB | There was a change in the members of the 'Unknown' topology.
+W, [2022-03-04T19:56:43.296362 #37188]  WARN -- : MONGODB | Error running ismaster on rocklov-db:27017: Mongo::Error::SocketError: Errno::ECONNREFUSED: Connection refused - connect(2) for 127.0.0.1:27017 (for 127.0.0.1:27017 (no TLS)) (on rocklov-db:27017)
+D, [2022-03-04T19:56:43.296579 #37188] DEBUG -- : MONGODB | Server description for rocklov-db:27017 changed from 'unknown' to 'unknown'.
+D, [2022-03-04T19:56:43.296707 #37188] DEBUG -- : MONGODB | There was a change in the members of the 'Unknown' topology.
+W, [2022-03-04T19:56:44.297567 #37188]  WARN -- : MONGODB | Error running ismaster on rocklov-db:27017: Mongo::Error::SocketError: Errno::ECONNREFUSED: Connection refused - connect(2) for 127.0.0.1:27017 (for 127.0.0.1:27017 (no TLS)) (on rocklov-db:27017)
+D, [2022-03-04T19:56:44.297776 #37188] DEBUG -- : MONGODB | Server description for rocklov-db:27017 changed from 'unknown' to 'unknown'.
+D, [2022-03-04T19:56:44.297900 #37188] DEBUG -- : MONGODB | There was a change in the members of the 'Unknown' topology.
