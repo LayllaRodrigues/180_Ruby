@@ -1,12 +1,17 @@
-Sendo um usuário cadastrado
-Quero acessar o sistema da Rocklov
-Para que eu possa anunciar meus equipamentos musicais
-
+   #language: pt
+   
+Funcionalidade: Login
+   
+    Sendo um usuário cadastrado
+    Quero acessar o sistema da Rocklov
+    Para que eu possa anunciar meus equipamentos musicais
+    
+@temp
 Cenario: Login do usuário
 
     Dado que acesso a página principal
-    Quando submeto minhas credenciais válidas
-    Então sou redirecionado para o Dashboard
+    Quando submeto minhas credenciais "laylla@hotmail.com" e "pwd123" 
+    Então sou direcionado para o Dashboard
 
 Cenario: Senha incorreta
 
