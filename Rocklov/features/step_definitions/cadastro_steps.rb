@@ -21,7 +21,7 @@ Quando('submeto o seguinte formulário de cadastro:') do |table|
     click_button    "Cadastrar"
 end
   
-Então('sou direcionado para o dashboard') do
+Então('sou direcionado para o Dashboard') do 
     expect(page).to have_css ".dashboard"
 end
   

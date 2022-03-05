@@ -12,45 +12,19 @@ Cenário: Fazer cadastro
     Quando submeto o seguinte formulário de cadastro:
         |nome            |email             |senha |
         |Laylla Rodrigues|laylla@hotmail.com|pwd123|
-    Então sou direcionado para o dashboard
+    Então sou direcionado para o Dashboard
 
-@tentativa_cadastro
-Cenário: Submeter cadastro sem o nome 
-
-    Dado que acesso a página de cadastro
-    Quando submeto o seguinte formulário de cadastro:
-        |nome            |email             |senha |
-        |                |laylla@hotmail.com|pwd123|    
-    Então vejo a mensagem de alerta: "Oops. Informe seu nome completo!"
-
-@tentativa_cadastro
-Cenário: Submeter cadastro sem o e-mail
-    
-    Dado que acesso a página de cadastro
-    Quando submeto o seguinte formulário de cadastro:
-        |nome            |email             |senha |
-        |Laylla Rodrigues|                  |pwd123|    
-    Então vejo a mensagem de alerta: "Oops. Informe um email válido!"
-
-@tentativa_cadastro
-Cenário: Submeter cadastro com email incorreto
+Esquema do Cenário: Tentativa de Cadastro
 
     Dado que acesso a página de cadastro
     Quando submeto o seguinte formulário de cadastro:
-        |nome            |email             |senha |
-        |Laylla Rodrigues|laylla&hotmail.com|pwd123|
-    Então vejo a mensagem de alerta: "Oops. Informe um email válido!"
+        |nome         |email         |senha        |
+        |<nome_input> |<email_input> |<senha_input>|    
+    Então vejo a mensagem de alerta: "<mensagem_output>"
 
-@tentativa_cadastro
-Cenário: Submeter cadastro sem a senha
-
-    Dado que acesso a página de cadastro
-    Quando submeto o seguinte formulário de cadastro:
-        |nome            |email             |senha |
-        |Laylla Rodrigues|laylla@hotmail.com|      |    
-    Então vejo a mensagem de alerta: "Oops. Informe sua senha secreta!"
-
-
-
-
-
+    Exemplos:
+    |nome_input         |email_input       |senha_input|mensagem_output                   |
+    |                   |laylla@hotmail.com|pwd123     |Oops. Informe seu nome completo!  |
+    |Laylla Rodrigues   |                  |pwd123     |Oops. Informe um email válido!    |
+    |Laylla Rodrigues   |layllahotmail.com |pwd123     |Oops. Informe um email válido!    |
+    |Laylla Rodrigues   |laylla@hotmail.com|           |Oops. Informe sua senha secreta!  |
