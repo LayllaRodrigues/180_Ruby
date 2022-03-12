@@ -12,33 +12,16 @@ Cenario: Login do usuário
     Dado que acesso a página principal
     Quando submeto minhas credenciais "laylla@hotmail.com" e "pwd123" 
     Então sou direcionado para o Dashboard
-
-Cenario: Senha incorreta
-
+    
+Esquema do Cenario: Tentar logar
     Dado que acesso a página principal
-    Quando submeto minhas credenciais com senha incorreta
-    Então vejo a mensagem de alerta: Usuário e/ou senha inválidos.
+    Quando submeto minhas credenciais "<email_input>" e "<senha_input>"
+    Então vejo a mensagem de alerta: "<mensagem_output>"
 
-Cenário: Email não cadastrado
-
-    Dado que acesso a página principal
-    Quando submeto minhas credenciais com email que não existe na Rocklov
-    Então vejo a mensagem de alerta: Usuário e/ou senha inválidos.
-
-Cenario: Email incorreto
-
-    Dado que acesso a página principal
-    Quando submeto minhas credenciais com email incorreto
-    Então vejo a mensagem de alerta: Oops. Informe um email válido!
-
-Cenario: Email não informado
-
-    Dado que acesso a página principal
-    Quando submeto minhas credenciais sem o email
-    Então vejo a mensagem de alerta: Oops. Informe um email válido!
-
-Cenario: Senha não informada
-
-    Dado que acesso a página principal
-    Quando submeto minhas credenciais sem a senha
-    Então vejo a mensagem de alerta: ops. Informe sua senha secreta!
+    Exemplos:
+    |email_input       |senha_input|mensagem_output                 |
+    |laylla@hotmail.com|abc123     |Usuário e/ou senha inválidos.   |
+    |laylla@invalid.com|abc123     |Usuário e/ou senha inválidos.   |
+    |laylla@hotmai.com |abc123     |Usuário e/ou senha inválidos.   |
+    |                  |abc123     |Oops. Informe um email válido!  |
+    |laylla@hotmail.com|           |Oops. Informe sua senha secreta!|
