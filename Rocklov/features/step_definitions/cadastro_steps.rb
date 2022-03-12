@@ -20,7 +20,7 @@ Quando('submeto o seguinte formulário de cadastro:') do |table|
 
     click_button    "Cadastrar"
 end
-  
+
   
 Então('vejo a mensagem de alerta: {string}') do |expect_alert|
     alert = find(".alert-dark")
