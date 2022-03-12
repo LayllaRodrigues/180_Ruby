@@ -10,8 +10,8 @@ Funcionalidade: Cadastro
 
         Dado que acesso a página de cadastro
         Quando submeto o seguinte formulário de cadastro:
-            | nome             | email              | senha  |
-            | Laylla Rodrigues | laylla@hotmail.com | pwd123 |
+            |nome             |email                       |senha  |
+            |Laylla Rodrigues |laylla.rodrigues@hotmail.com|pwd123 |
         Então sou direcionado para o Dashboard
 
     Esquema do Cenário: Tentativa de Cadastro
@@ -23,8 +23,8 @@ Funcionalidade: Cadastro
         Então vejo a mensagem de alerta: "<mensagem_output>"
 
         Exemplos:
-            | nome_input       | email_input        | senha_input | mensagem_output                  |
-            |                  | laylla@hotmail.com | pwd123      | Oops. Informe seu nome completo! |
-            | Laylla Rodrigues |                    | pwd123      | Oops. Informe um email válido!   |
-            | Laylla Rodrigues | layllahotmail.com  | pwd123      | Oops. Informe um email válido!   |
-            | Laylla Rodrigues | laylla@hotmail.com |             | Oops. Informe sua senha secreta! |
+            |nome_input       |email_input                     |senha_input |mensagem_output                  |
+            |                 |laylla.rodrigues@hotmail.com    |pwd123      |Oops. Informe seu nome completo! |
+            |Laylla Rodrigues |                                |pwd123      |Oops. Informe um email válido!   |
+            |Laylla Rodrigues |laylla.rodrigues&hotmail.com    |pwd123      |Oops. Informe um email válido!   |
+            |Laylla Rodrigues |laylla.rodrigues@hotmail.com    |            |Oops. Informe sua senha secreta! |
