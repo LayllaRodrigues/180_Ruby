@@ -8,6 +8,7 @@ Funcionalidade: Cadastro de Anúncios
     Cenario: Novo equipo
 
         Dado que eu tenho o seguinte equipamento:
+            | thumb     | 
             | nome      | Fender Strato |
             | categoria | Cordas        |
             | preco     | 200           |
