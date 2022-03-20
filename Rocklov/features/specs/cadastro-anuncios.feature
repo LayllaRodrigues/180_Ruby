@@ -8,7 +8,9 @@ Funcionalidade: Cadastro de Anúncios
     @equipo
     Cenario: Novo equipo
 
-        Dado que eu tenho o seguinte equipamento:
+        Dado que estou logado como "yago@equipo.com.br" e "pwd123"
+        E que acesso a formulario de cadastro de anúncios
+        E que eu tenho o seguinte equipamento:
             | thumb     | fender-sb.jpg |
             | nome      | Fender Strato |
             | categoria | Cordas        |
