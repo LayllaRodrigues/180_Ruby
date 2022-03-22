@@ -18,13 +18,13 @@ end
   
 Quando('submeto o cadastro desse item') do
 
-    thumb = Dir.pwd + "/features/support/fixtures/images/" + @anuncio[:thumb]
+    thumb = Dir.pwd + "/features/support/fixtures/images/" + @anuncio[:thumb] #{monto de forma relativa o caminho que está minha massa de teste}
     find("#thumbnail input[type=file]", visible: false).set thumb #{aqui, o elemento está oculto para o usuário, por isso o cucumber não o encontra sem especificarmos de que ele deve pesquisar mesmo estando invisivel}
     find("input[placeholder$=equipamento]").set @anuncio[:nome] #{usando $ filtramos a busca por placeholder que comece com algum elemento}
     find("#category").find('option', text: @anuncio[:categoria]).select_option
     find("input[placeholder^=Valor]").set @anuncio[:preco] #{usando ^ filtramos a busca por placeholder que termine com algum elemento}
 
-    # click_button "Cadastrar"
+    click_button "Cadastrar"
     sleep   10
 end
   
