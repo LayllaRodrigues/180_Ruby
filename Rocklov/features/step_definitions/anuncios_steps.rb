@@ -13,7 +13,6 @@ end
 
 Dado('que eu tenho o seguinte equipamento:') do |table|
     @anuncio = table.rows_hash #{quando uso uma variavel com @ ela se torna uma vaiavel de instancia, bem parecida com a global}
-    log  @anuncio
 end
   
 Quando('submeto o cadastro desse item') do
@@ -25,9 +24,10 @@ Quando('submeto o cadastro desse item') do
     find("input[placeholder^=Valor]").set @anuncio[:preco] #{usando ^ filtramos a busca por placeholder que termine com algum elemento}
 
     click_button "Cadastrar"
-    sleep   10
 end
   
 Então('devo ver esse item no meu dashboard') do
-    pending 
+    anuncios = find(".equipo-list")
+    expect(anuncios).to have_content @anuncio[:nome]
+    expect(anuncios).to have_content "R$#{@anuncio[:preco]}/dia" #{interpolação do txt na tela com o elemento da minha tabela}
 end

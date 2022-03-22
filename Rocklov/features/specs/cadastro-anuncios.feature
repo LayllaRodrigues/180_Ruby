@@ -3,7 +3,7 @@
 Funcionalidade: Cadastro de Anúncios
     Sendo usuário cadastrado no Rocklov que possui equipamentos musicais
     Quero cadastrar meus equipamentos
-    Para que eu possa disponibiliza-los para loacação
+    Para que eu possa disponibiliza-los para locação
 
     @equipo
     Cenario: Novo equipo
