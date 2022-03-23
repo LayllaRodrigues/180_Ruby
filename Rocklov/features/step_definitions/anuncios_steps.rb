@@ -1,4 +1,5 @@
-Dado('que estou logado como {string} e {string}') do |string, string2|
+Dado('que estou logado como {string} e {string}') do |email, password|
+    @email = email
     visit "/"
     find("input[placeholder='Seu e-email']").set    'yago@equipo.com.br'
     find("input[type=password]").set    'pwd123'
@@ -13,7 +14,10 @@ end
 
 Dado('que eu tenho o seguinte equipamento:') do |table|
     @anuncio = table.rows_hash #{quando uso uma variavel com @ ela se torna uma vaiavel de instancia, bem parecida com a global}
+   
+    MongoDB.new.remove_equipo(@anuncio[:nome], @email)
 end
+
   
 Quando('submeto o cadastro desse item') do
 
