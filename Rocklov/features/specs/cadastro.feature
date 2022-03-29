@@ -5,7 +5,7 @@ Funcionalidade: Cadastro
     Quero fazer o meu cadastro no Rocklov
     Para que eu possa disponibilizá-los para locação
 
-    @cadastro
+    
     Cenário: Fazer cadastro
 
         Dado que acesso a página de cadastro
@@ -13,7 +13,8 @@ Funcionalidade: Cadastro
             |nome             |email                       |senha  |
             |Laylla Rodrigues |laylla.rodrigues@hotmail.com|pwd123 |
         Então sou direcionado para o Dashboard
-
+    
+    @cadastro
     Esquema do Cenário: Tentativa de Cadastro
 
         Dado que acesso a página de cadastro
