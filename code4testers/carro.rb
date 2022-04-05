@@ -6,7 +6,7 @@ class Carro
     attr_accessor :nome, :cor, :marca
 
     def ligar
-        puts "O #{@nome} está pronto para iniciar o trajeto."
+        puts "A #{@nome} está pronto para iniciar o trajeto."
     end
 
 end
