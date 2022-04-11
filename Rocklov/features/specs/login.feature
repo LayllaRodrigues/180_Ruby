@@ -20,7 +20,7 @@ Esquema do Cenario: Tentar logar
 
     Exemplos:
     |email_input        |senha_input|mensagem_output                 |
-    |laylla1@hotmail.com|abc123     |Usuário e/ou senha inválidos.   |
+    |laylla1@hotmail.com|abc124     |Usuário e/ou senha inválidos.   |
     |laylla1@invalid.com|abc123     |Usuário e/ou senha inválidos.   |
     |laylla1@hotmai.com |abc123     |Usuário e/ou senha inválidos.   |
     |                   |abc123     |Oops. Informe um email válido!  |
