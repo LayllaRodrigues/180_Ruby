@@ -3,5 +3,6 @@
 #Vantagens: redução de repetição e aumento da produtividade 
 
     Before do
+        @alert = Alert.new
         @login_page = LoginPage.new
     end
