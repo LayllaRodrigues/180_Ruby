@@ -5,4 +5,5 @@
     Before do
         @alert = Alert.new
         @login_page = LoginPage.new
+        @signup_pages = SignupPage.new
     end
