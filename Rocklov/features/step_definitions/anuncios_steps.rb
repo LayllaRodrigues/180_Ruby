@@ -1,13 +1,13 @@
 Dado('que estou logado como {string} e {string}') do |email, password|
     @email = email
-
     @login_page.open
     @login_page.with(email, password)
 
 end
   
 Dado('que acesso a formulario de cadastro de anúncios') do
-    click_button "Criar anúncio"
+    click_button "Criar anúncio" 
+    
     #{ isso valida se estou na page correta}
     expect(page).to have_css "#equipoForm"
 end
