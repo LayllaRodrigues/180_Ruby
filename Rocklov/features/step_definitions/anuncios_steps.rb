@@ -6,7 +6,7 @@ Dado('que estou logado como {string} e {string}') do |email, password|
 end
   
 Dado('que acesso a formulario de cadastro de anúncios') do
-    click_button "Criar anúncio" 
+    @dash_page.goto_equipo_form
     
     #{ isso valida se estou na page correta}
     expect(page).to have_css "#equipoForm"
