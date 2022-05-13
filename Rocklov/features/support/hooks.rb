@@ -6,5 +6,7 @@
         @alert = Alert.new
         @login_page = LoginPage.new
         @signup_pages = SignupPage.new
-        @DashPage = DashPage.new
+        @dash_page = DashPage.new
+        @equipos_page = EquiposPage.new 
+
     end
