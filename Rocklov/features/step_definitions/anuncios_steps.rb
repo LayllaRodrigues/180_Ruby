@@ -8,7 +8,7 @@ end
 Dado('que acesso a formulario de cadastro de anúncios') do
     @dash_page.goto_equipo_form
     
-    #{ isso valida se estou na page correta}
+    #{isso valida se estou na page correta}
     expect(page).to have_css "#equipoForm"
 end
 
