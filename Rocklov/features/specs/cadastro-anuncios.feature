@@ -28,5 +28,5 @@ Funcionalidade: Cadastro de Anúncios
                 | nome      | Fender Strato |
                 | categoria | Cordas        |
                 | preco     | 200           |
-        Quando submeto o cadastro do item 
+        Quando submeto o cadastro desse item 
         Então vejo a mensagem de alerta: "📷 Adicione uma foto no seu anúncio!"
