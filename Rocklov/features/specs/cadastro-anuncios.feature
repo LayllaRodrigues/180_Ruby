@@ -12,11 +12,11 @@ Funcionalidade: Cadastro de Anúncios
 
         Dado que acesso a formulario de cadastro de anúncios
             E que eu tenho o seguinte equipamento:
-                | thumb     | fender-sb.jpg |
-                | nome      | Fender Strato |
-                | categoria | Cordas        |
-                | preco     | 200           |
-        Quando submeto o cadastro desse item 
+            | thumb     | fender-sb.jpg |
+            | nome      | Fender Strato |
+            | categoria | Cordas        |
+            | preco     | 200           |
+        Quando submeto o cadastro desse item
         Então devo ver esse item no meu dashboard
 
     @cc
@@ -24,9 +24,18 @@ Funcionalidade: Cadastro de Anúncios
 
         Dado que acesso a formulario de cadastro de anúncios
             E que eu tenho o seguinte equipamento:
-                | thumb     |               |
-                | nome      | Fender Strato |
-                | categoria | Cordas        |
-                | preco     | 200           |
-        Quando submeto o cadastro desse item 
-        Então vejo a mensagem de alerta: "📷 Adicione uma foto no seu anúncio!
+            | thumb     |               |
+            | nome      | Fender Strato |
+            | categoria | Cordas        |
+            | preco     | 200           |
+        Quando submeto o cadastro desse item
+        Então vejo a mensagem de alerta: "📷 Adicione uma foto no seu anúncio!"
+
+        Exemplos:
+            | foto          | nome              | categoria | preco | saida                            |
+            |               | Violao de Nylon   | Cordas    | 150   | Adicione uma foto no seu anúncio |
+            | clarinete.jpg |                   | Outros    | 250   | Informe a descrição do anúncio   |
+            | mic.jpg       | Microfone Shure   |           | 100   | Informe a categoria              |
+            | trompete.jpg  | Trompete Clássico | Outros    |       | Informe o valor da diária        |
+
+
