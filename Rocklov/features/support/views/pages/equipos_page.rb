@@ -9,10 +9,14 @@ class EquiposPage
         upload(equipo[:thumb]) if equipo[:thumb].length > 0 #.length consegue identificar a quantidade de itens em um array, o a qtd de letras em um string
        
         find("input[placeholder$=equipamento]").set equipo[:nome] #{usando $ filtramos a busca por placeholder que comece com algum elemento}
-        find("#category").find('option', text: equipo[:categoria]).select_option
+        select_cat(equipo[:categoria]) if equipo[:categoria].length > 0  #Só selecione se o valor categoria for maior que 0
         find("input[placeholder^=Valor]").set equipo[:preco] #{usando ^ filtramos a busca por placeholder que termine com algum elemento}
-
+        
         click_button "Cadastrar"
+    end
+
+    def select_cat(cat)
+        find("#category").find('option', text: cat).select_option
     end
 
     def upload(file_name)
