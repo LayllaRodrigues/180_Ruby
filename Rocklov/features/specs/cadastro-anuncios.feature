@@ -20,16 +20,16 @@ Funcionalidade: Cadastro de Anúncios
         Então devo ver esse item no meu dashboard
 
     @cc
-    Cenario: Anúncio sem foto
+    Esquema do Cenario: Tentativa de cadastro de anúncios
 
         Dado que acesso a formulario de cadastro de anúncios
             E que eu tenho o seguinte equipamento:
-            | thumb     |               |
-            | nome      | Fender Strato |
-            | categoria | Cordas        |
-            | preco     | 200           |
+            | thumb     | <foto>      |
+            | nome      | <nome>      |
+            | categoria | <categoria> |
+            | preco     | <preco>     |
         Quando submeto o cadastro desse item
-        Então vejo a mensagem de alerta: "📷 Adicione uma foto no seu anúncio!"
+        Então vejo a mensagem de alerta: "<saida>"
 
         Exemplos:
             | foto          | nome              | categoria | preco | saida                            |
