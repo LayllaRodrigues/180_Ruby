@@ -34,7 +34,7 @@ Funcionalidade: Cadastro de Anúncios
         Exemplos:
             | foto          | nome              | categoria | preco | saida                                |
             |               | Violao de Nylon   | Cordas    | 150   | 📷 Adicione uma foto no seu anúncio! |
-            | clarinete.jpg |                   | Outros    | 250   | 🎸 Informe a descrição do anúncio!  |
+            | clarinete.jpg |                   | Outros    | 250   | 🎸 Informe a descrição do anúncio!   |
             | mic.jpg       | Microfone Shure   |           | 100   | 🤭 Informe a categoria               |
             | trompete.jpg  | Trompete Clássico | Outros    |       | 💰 Informe o valor da diária         |
 

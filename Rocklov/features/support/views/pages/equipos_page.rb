@@ -1,7 +1,6 @@
 class EquiposPage
     include Capybara::DSL 
 
-
     def create(equipo)
         #checkpoint com timeout explicito
         page.has_css?("#equipoForm")
