@@ -32,12 +32,12 @@ Funcionalidade: Cadastro de Anúncios
         Então vejo a mensagem de alerta: "<saida>"
 
         Exemplos:
-            | foto          | nome              | categoria | preco | saida                                    |
-            |               | Violao de Nylon   | Cordas    | 150   | 📷 Adicione uma foto no seu anúncio!     |
-            | clarinete.jpg |                   | Outros    | 250   | 🎸 Informe a descrição do anúncio!       |
-            | mic.jpg       | Microfone Shure   |           | 100   | 🤭 Informe a categoria                   |
-            | trompete.jpg  | Trompete Clássico | Outros    |       | 💰 Informe o valor da diária             |
-            | conga.jpg     | conga             | Outros    | abc   | 🤭 O valor da diária deve ser numérico!) |
-            | conga.jpg     | conga             | Outros    | 123c  | 🤭 O valor da diária deve ser numérico!) |
+            | foto          | nome              | categoria | preco | saida                                |
+            |               | Violao de Nylon   | Cordas    | 150   | 📷 Adicione uma foto no seu anúncio! |
+            | clarinete.jpg |                   | Outros    | 250   | 🎸 Informe a descrição do anúncio!   |
+            | mic.jpg       | Microfone Shure   |           | 100   | 🤭 Informe a categoria               |
+            | trompete.jpg  | Trompete Clássico | Outros    |       | 💰 Informe o valor da diária         |
+            | conga.jpg     | conga             | Outros    | abc   | O valor da diária deve ser numérico! |
+            | conga.jpg     | conga             | Outros    | 123c  | O valor da diária deve ser numérico! |
 
 
