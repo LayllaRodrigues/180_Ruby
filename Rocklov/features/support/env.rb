@@ -4,9 +4,8 @@ require "webdrivers"
 require "faker"
 
 Capybara.configure do |config|
-    config.default_driver = :selenium_chrome
+  config.default_driver = :selenium_chrome
 
-    config.app_host = "http://rocklov-web:3000"
-    config.default_max_wait_time = 10
+  config.app_host = "http://rocklov-web:3000"
+  config.default_max_wait_time = 10
 end
-
