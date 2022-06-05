@@ -9,6 +9,7 @@ Before do
   @dash_page = DashPage.new
   @equipos_page = EquiposPage.new
 
-  page.driver.browser.manage.window.maximize
-  
+  # page.driver.browser.manage.window.maximize #Isso permite que ao levantar o navegador, a aba seja maximizada
+  page.current_window.resize_to(1440,990) #ajuste exato de resolução da tela
+
 end
