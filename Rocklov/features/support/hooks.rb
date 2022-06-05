@@ -8,4 +8,7 @@ Before do
   @signup_pages = SignupPage.new
   @dash_page = DashPage.new
   @equipos_page = EquiposPage.new
+
+  page.driver.browser.manage.window.maximize
+  
 end
