@@ -13,8 +13,9 @@ describe "POST /sessions" do
             )
 
             expect(result.code).to eql 200
+            expect(result.parsed_response["_id"].length).to eql 24
 
-            puts result.parsed_response
+            puts result.parsed_response["_id"]
             puts result.parsed_response.class
     end
 end
