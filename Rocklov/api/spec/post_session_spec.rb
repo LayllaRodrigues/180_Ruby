@@ -17,5 +17,7 @@ describe "POST /sessions" do
 
             puts result.parsed_response["_id"]
             puts result.parsed_response.class
+
+            TESTE 
     end
 end
