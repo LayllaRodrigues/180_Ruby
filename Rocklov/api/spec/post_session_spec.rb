@@ -6,7 +6,7 @@ describe "POST/sessions" do
       @result = Sessions.new.login("laylla13@hotmail.com", "pwd")
     end
 
-    it "valida status code" do
+    it "valida status code 200" do
       expect(@result.code).to eql 200
     end
 
@@ -20,7 +20,7 @@ describe "POST/sessions" do
       @result = Sessions.new.login("laylla13@hotmail.com", "senhainvalida123")
     end
 
-    it "valida status code" do
+    it "valida status code 401" do
       expect(@result.code).to eql 401
     end
 
