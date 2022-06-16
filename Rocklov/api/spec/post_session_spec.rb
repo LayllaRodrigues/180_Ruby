@@ -1,9 +1,12 @@
 require_relative "routes/sessions"
 
+#DRY Don't Repeat yourself X TESTE: Uma boa prática sugerida no projeto é deixar a massa de teste explicita, por isso será criado a variável payload em cada contexto, mesmo que duplique o cód, trará mais clareza.
+
 describe "POST/sessions" do
   context "login com sucesso" do
     before(:all) do
-      @result = Sessions.new.login("laylla13@hotmail.com", "pwd")
+      payload = {email: "laylla13@hotmail.com", password: "pwd"}
+      @result = Sessions.new.login(payload)
     end
 
     it "valida status code 200" do
@@ -17,7 +20,8 @@ describe "POST/sessions" do
 
   context "senha invalida" do
     before(:all) do
-      @result = Sessions.new.login("laylla13@hotmail.com", "senhainvalida123")
+      payload = { email: "laylla13@hotmail.com", password: "senhainvalida123"}
+      @result = Sessions.new.login(payload)
     end
 
     it "valida status code 401" do
