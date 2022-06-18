@@ -5,11 +5,11 @@ require_relative "routes/sessions"
 describe "POST/sessions" do
   context "login com sucesso" do
     before(:all) do
-      payload = {email: "laylla13@hotmail.com", password: "pwd"}
+      payload = { email: "laylla13@hotmail.com", password: "pwd" }
       @result = Sessions.new.login(payload)
     end
 
-    it "valida status code 200" do
+    it "valida status code" do
       expect(@result.code).to eql 200
     end
 
@@ -18,18 +18,58 @@ describe "POST/sessions" do
     end
   end
 
-  context "senha invalida" do
-    before(:all) do
-      payload = { email: "laylla13@hotmail.com", password: "senhainvalida123"}
-      @result = Sessions.new.login(payload)
-    end
+  examples = [
+    {
+      title: "senha inválida", 
+      payload: { email: "laylla13@hotmail.com", password: "senhainvalida123" },
+      code: 401,
+      error: "Unauthorized",
+    },
+    {
+      title: "usuário não existe", 
+      payload: { email: "404@hotmail.com", password: "senhainvalida123" },
+      code: 401,
+      error: "Unauthorized",
+    },
+    {
+      title: "email em branco", 
+      payload: { email: "", password: "senhainvalida123" },
+      code: 412,
+      error: "required email",
+    },
+    {
+      title: "sem o campo email", 
+      payload: { password: "senhainvalida123" },
+      code: 412,
+      error: "required email",
+    },
+    {
+      title: "senha em branco",
+      payload: { email: "laylla13@hotmail.com", password: "" },
+      code: 412,
+      error: "required password",
+    },
+    {
+      title: "sem o campo senha",
+      payload: { email: "laylla13@hotmail.com" },
+      code: 412,
+      error: "required password",
+    },
+  ]
 
-    it "valida status code 401" do
-      expect(@result.code).to eql 401
-    end
+  examples.each do |e|
+    context "#{e[:title]}" do
+      before(:all) do
+        @result = Sessions.new.login(e[:payload])
+      end
 
-    it "valida autenticação" do
-      expect(@result.parsed_response["error"]).to eql "Unauthorized"
+      it "valida status code #{e[:code]} " do
+        expect(@result.code).to eql e[:code]
+      end
+
+      it "valida autenticação" do
+        expect(@result.parsed_response["error"]).to eql e[:error]
+      end
     end
   end
 end

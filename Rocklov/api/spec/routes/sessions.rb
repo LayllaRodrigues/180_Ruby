@@ -14,4 +14,3 @@ class Sessions
            )
   end
 end
- 
