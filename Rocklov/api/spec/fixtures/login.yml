@@ -1,0 +1,35 @@
+---
+- title: senha inválida
+  payload:
+    email: laylla13@hotmail.com
+    password: senhainvalida123
+  code: 401
+  error: Unauthorized
+- title: usuário não existe
+  payload:
+    email: 404@hotmail.com
+    password: senhainvalida123
+  code: 401
+  error: Unauthorized
+- title: email em branco
+  payload:
+    email: ''
+    password: senhainvalida123
+  code: 412
+  error: required email
+- title: sem o campo email
+  payload:
+    password: senhainvalida123
+  code: 412
+  error: required email
+- title: senha em branco
+  payload:
+    email: laylla13@hotmail.com
+    password: ''
+  code: 412
+  error: required password
+- title: sem o campo senha
+  payload:
+    email: laylla13@hotmail.com
+  code: 412
+  error: required password

@@ -1,4 +1,5 @@
 require_relative "routes/sessions"
+require_relative "helpers"
 
 #DRY Don't Repeat yourself X TESTE: Uma boa prática sugerida no projeto é deixar a massa de teste explicita, por isso será criado a variável payload em cada contexto, mesmo que duplique o cód, trará mais clareza.
 
@@ -18,44 +19,7 @@ describe "POST/sessions" do
     end
   end
 
-  examples = [
-    {
-      title: "senha inválida", 
-      payload: { email: "laylla13@hotmail.com", password: "senhainvalida123" },
-      code: 401,
-      error: "Unauthorized",
-    },
-    {
-      title: "usuário não existe", 
-      payload: { email: "404@hotmail.com", password: "senhainvalida123" },
-      code: 401,
-      error: "Unauthorized",
-    },
-    {
-      title: "email em branco", 
-      payload: { email: "", password: "senhainvalida123" },
-      code: 412,
-      error: "required email",
-    },
-    {
-      title: "sem o campo email", 
-      payload: { password: "senhainvalida123" },
-      code: 412,
-      error: "required email",
-    },
-    {
-      title: "senha em branco",
-      payload: { email: "laylla13@hotmail.com", password: "" },
-      code: 412,
-      error: "required password",
-    },
-    {
-      title: "sem o campo senha",
-      payload: { email: "laylla13@hotmail.com" },
-      code: 412,
-      error: "required password",
-    },
-  ]
+  examples = Helpers::get_fixture("login")
 
   examples.each do |e|
     context "#{e[:title]}" do
