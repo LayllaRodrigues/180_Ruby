@@ -7,7 +7,7 @@ describe "POST /signup" do
             payload = { name: "pitty", email: "pitty@bol.com.br", password: "pwd123" }
             MongoDB.new.remove_user(payload[:email])
 
-            @result = Signap.new.create(payload)
+            @result = Signup.new.create(payload)
         end
 
         it "valida status code" do
