@@ -2,3 +2,4 @@ source "https://rubygems.org"
 
 gem "rspec", "3.11"
 gem "httparty", "0.19.1"
+gem "mongo", "2,13,1"
