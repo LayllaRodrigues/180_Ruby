@@ -1,8 +1,6 @@
 require_relative "routes/sessions"
 require_relative "helpers"
 
-#DRY Don't Repeat yourself X TESTE: Uma boa prática sugerida no projeto é deixar a massa de teste explicita, por isso será criado a variável payload em cada contexto, mesmo que duplique o cód, trará mais clareza.
-
 describe "POST/sessions" do
   context "login com sucesso" do
     before(:all) do
