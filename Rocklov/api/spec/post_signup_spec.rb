@@ -1,5 +1,4 @@
-require_relative "routes/signup"
-require_relative "lib/mongo"
+
 
 describe "POST /signup" do
     context "novo usuario" do
@@ -29,6 +28,10 @@ describe "POST /signup" do
 
         it "deve retornar 409" do
             expect(@result.code).to eql 409
+        end
+
+        it "deve retornar mensagem" do
+            expect(@result.parsed_response["error"]).to eql "Email already exists :("
         end
     end
 end

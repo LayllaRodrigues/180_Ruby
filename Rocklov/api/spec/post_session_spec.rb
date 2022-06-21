@@ -1,5 +1,4 @@
-require_relative "routes/sessions"
-require_relative "helpers"
+
 
 describe "POST/sessions" do
   context "login com sucesso" do

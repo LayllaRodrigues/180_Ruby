@@ -12,16 +12,20 @@ class MongoDB
   end
 
   def remove_user(email)
-    users.delete_many({ email: "pitty@bol.com.br" })
+    @users.delete_many({ email: email })
   end
 
   def get_user(email)
-    user = users.find({ email: email }).first
+    user = @users.find({ email: email }).first
     return user[:_id]
   end
 
-  def remove_equipo(name, email)
-    user_id = get_user(email)
-    equipos.delete_many({ name: name, user: user_id })
+  def remove_equipo(name, user_id)
+    obj_id = BSON::ObjectId.from_string(user_id)
+    @equipos.delete_many({ name: name, user: obj_id })
+  end
+
+  def get_mongo_id
+    return BSON::ObjectId.new
   end
 end
