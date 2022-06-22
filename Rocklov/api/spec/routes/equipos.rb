@@ -28,4 +28,7 @@ class Equipos < BaseApi
              },
            )
   end
+
+
 end
+

@@ -4,7 +4,7 @@ module Helpers
     end
   
     def get_thumb(file_name)
-      return File.open(File.join(Dir.pwd, "spec/fixtures/images", file_name), "rb")
+      return File.open(File.join(Dir.pwd, "spec/fixtures/images", file_name), "rb") # o argumento rb faz com que alem de encontrar o arquivo, ele o grave no formato binario
     end
   
     module_function :get_fixture
