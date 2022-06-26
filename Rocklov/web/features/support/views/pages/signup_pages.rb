@@ -1,17 +1,17 @@
 
-class  SignupPage
+class SignupPage
     include Capybara::DSL
-
-
+  
     def open
-        visit "/signup"
+      visit "/signup"
     end
-
-    def signup(user)
-        find("#fullName").set user[:nome]
-        find("#email").set user[:email]
-        find("#password").set user[:senha]
-        click_button    "Cadastrar"
+  
+    def create(user)
+      find("#fullName").set user[:nome]
+      find("#email").set user[:email]
+      find("#password").set user[:senha]
+  
+      click_button "Cadastrar"
     end
-
-end
+  end
+  
