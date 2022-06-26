@@ -3,7 +3,7 @@
 describe "POST/sessions" do
   context "login com sucesso" do
     before(:all) do
-      payload = { email: "laylla13@hotmail.com", password: "pwd" }
+      payload = { email: "laylla13@hotmail.com", password: "pwd123" }
       @result = Sessions.new.login(payload)
     end
 

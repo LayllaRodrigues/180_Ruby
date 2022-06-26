@@ -3,7 +3,7 @@ describe "POST /equipos" do
     payload = { email: "to@mate.com", password: "pwd123" }
     result = Sessions.new.login(payload)
     @user_id = result.parsed_response["_id"]
-  end
+  end 
 
   context "novo equipo" do
     before(:all) do
@@ -27,7 +27,7 @@ describe "POST /equipos" do
   context "nao autorizado" do
     before(:all) do
       payload = {
-        thumbnail: Helpers::get_thumb("baixo.jpg"),
+        thumbnail: Helpers::get_thumb("baixo.jpg"), #Encapsulamento do recurso de buscar img no helpers com o metodo ger thumb
         name: "Contra Baixo",
         category: "Cordas",
         price: 59,
