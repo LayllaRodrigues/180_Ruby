@@ -1,4 +1,4 @@
-Então("sou direcionado para o Dashboard") do
+Então("sou redirecionado para o Dashboard") do
   expect(@dash_page.on_dash?).to be true
 end
 
