@@ -4,7 +4,7 @@ require_relative "routes/equipos"
 
 require_relative "libs/mongo"
 require_relative "helpers"
-
+ 
 require "digest/md5"
 
 def to_md5(pass)
